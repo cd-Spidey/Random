@@ -1,0 +1,118 @@
+name: Vendor Blobs - Github
+# Push your desired Vendor Blobs in to your Pre-made Repository.
+# Don't ever put your Github's Personal Access Token here as default value.
+on:
+  workflow_dispatch:
+    inputs:
+      DUMP_REPO:
+        description: 'Android Dump' # Look for Android Dump in Github, or in Gitlab. Or dump your own.
+        required: true
+        default: ''
+      DEVICE_TREE:
+        description: 'Device Tree' # Your Current Device Tree, you can generate using aospdtgen from sebaubuntu if you don't have one.
+        required: true
+        default: 'https://github.com/cd-Spidey/custom_recovery_tree_xiaomi_cannong'
+      VENDOR_BRANCH:
+        description: 'Desired Vendor Branch'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - Vendor-S
+        - Vendor-R
+        - Vendor-Q
+        - Vendor-P
+        - Vendor-O
+        - Vendor-N
+      VENDOR_NAME:
+        description: 'Vendor Name'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - xiaomi
+        - samsung
+        - realme
+        - oppo
+        - lenovo
+        - motorola
+        - asus
+      DEVICE_NAME:
+        description: 'Device Name'
+        required: true
+        default: 'codename'
+      USER_TOKEN:
+        description: 'It will serve as your Password'
+        required: true
+        default: 'ghp_xxxxxxxxxxxxxxxxxxxxxxx'
+      TARGET_REPO:
+        description: 'Pre-made Repo' # Remember, create repo first, with nothing on it. Also, don't put https:// at first, and no .git at the end.
+        required: true
+        default: 'github.com/<repo-owner>/<repo-name>'
+
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display Run Parameters
+      run: |
+        echo "::group::User Environment Variables"
+        echo "DUMP_REPO: ${{ github.event.inputs.DUMP_REPO }}"
+        echo "DEVICE_TREE: ${{ github.event.inputs.DEVICE_TREE }}"
+        echo "VENDOR_BRANCH: ${{ github.event.inputs.VENDOR_BRANCH }}"
+        echo "VENDOR_NAME: ${{ github.event.inputs.VENDOR_NAME }}"
+        echo "DEVICE_NAME: ${{ github.event.inputs.DEVICE_NAME }}"
+        echo "USER_TOKEN: ${{ github.event.inputs.USER_TOKEN }}"
+        echo "TARGET_REPO: ${{ github.event.inputs.TARGET_REPO }}"
+        echo "::endgroup::"
+ 
+    - name: Check Out
+      uses: actions/checkout@v3.1.0
+      
+    - name: Clone Android Dump Repository
+      run: |
+        mkdir workspace
+        cd workspace
+        echo "workspace=$(pwd)" >> ${GITHUB_OUTPUT}
+        git clone ${{ github.event.inputs.DUMP_REPO }} temp
+        echo "Done cloning."
+      id: pwd
+
+    - name: Clone Android Device Tree
+      run: |
+        git clone ${{ github.event.inputs.DEVICE_TREE }} android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}
+      working-directory: workspace
+      
+    - name: Clone LineageOS Tools and Utils
+      run: |
+        git clone https://github.com/LineageOS/android_tools_extract-utils -b lineage-19.1 android/tools/extract-utils
+        echo "Done cloning extract-utils."
+        git clone https://github.com/LineageOS/android_prebuilts_extract-tools -b lineage-19.1 android/prebuilts/extract-tools
+        echo "Done cloning extract-tools."
+      working-directory: ${{ steps.pwd.outputs.workspace }}
+
+    - name: Extracting Files from Dump
+      run: |
+        chmod a+x android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/setup-makefiles.sh
+        cd android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
+        bash extract-files.sh ~/work/Get-Extract-Push/Get-Extract-Push/workspace/temp/
+        echo "Done extracting and making files."
+        echo "Pushing as repository now."
+      working-directory: ${{ steps.pwd.outputs.workspace }}
+
+    - name: Pushing to Github as Repository
+      run: |
+        cd android/vendor/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
+        git init
+        git config --global user.name "Carlo Dee"
+        git config --global user.email "carlodee.official@gmail.com"
+        git branch -M ${{ github.event.inputs.VENDOR_BRANCH }}
+        git add .
+        git commit -m "Initial commit: ${{ github.event.inputs.VENDOR_NAME }} ${{ github.event.inputs.DEVICE_NAME }} vendor blobs"
+        git remote add origin https://${{ github.event.inputs.USER_TOKEN }}@${{ github.event.inputs.TARGET_REPO }}.git
+        git push origin ${{ github.event.inputs.VENDOR_BRANCH }}
+        echo "Done pushing as a repository. You now have Vendor Tree."
+      working-directory: ${{ steps.pwd.outputs.workspace }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
