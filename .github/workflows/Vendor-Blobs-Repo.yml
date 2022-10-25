@@ -1,6 +1,8 @@
-name: Vendor Blobs - Github
+name: Vendor Blobs - Repo
 # Push your desired Vendor Blobs in to your Pre-made Repository.
 # Don't ever put your Github's Personal Access Token here as default value.
+# If you are pushing in Github, be mindful in blobs size, 100MB maximum size per file.
+# Other Repository Website don't have that limit, way bigger at least.
 on:
   workflow_dispatch:
     inputs:
