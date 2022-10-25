@@ -43,14 +43,6 @@ on:
         description: 'Device Name'
         required: true
         default: 'codename'
-      USER_TOKEN:
-        description: 'It will serve as your Password'
-        required: true
-        default: 'ghp_xxxxxxxxxxxxxxxxxxxxxxx'
-      TARGET_REPO:
-        description: 'Pre-made Repo' # Remember, create repo first, with nothing on it. Also, don't put https:// at first, and no .git at the end.
-        required: true
-        default: 'github.com/<repo-owner>/<repo-name>'
 
 jobs:
   build:
