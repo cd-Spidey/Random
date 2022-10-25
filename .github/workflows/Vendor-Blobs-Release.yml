@@ -90,7 +90,7 @@ jobs:
       run: |
         chmod a+x android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/setup-makefiles.sh
         cd android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
-        bash extract-files.sh ~/work/Get-Extract-Push/Get-Extract-Push/workspace/temp/
+        bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/temp/
         echo "Done extracting and making files."
         echo "Pushing as repository now."
       working-directory: ${{ steps.pwd.outputs.workspace }}
