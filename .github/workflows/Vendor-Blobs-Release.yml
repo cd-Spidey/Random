@@ -1,0 +1,125 @@
+name: Vendor Blobs - Release
+# Push your desired Vendor Blobs in to your Pre-made Repository.
+# Don't ever put your Github's Personal Access Token here as default value.
+# If you are pushing in Github, be mindful in blobs size, 100MB maximum size per file.
+# Other Repository Website don't have that limit, way bigger at least.
+on:
+  workflow_dispatch:
+    inputs:
+      DUMP_REPO:
+        description: 'Android Dump' # Look for Android Dump in Github, or in Gitlab. Or dump your own.
+        required: true
+        default: ''
+      DEVICE_TREE:
+        description: 'Device Tree' # Your Current Device Tree, you can generate using aospdtgen from sebaubuntu if you don't have one.
+        required: true
+        default: 'https://github.com/cd-Spidey/custom_recovery_tree_xiaomi_cannong'
+      VENDOR_BRANCH:
+        description: 'Desired Vendor Branch'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - Vendor-S
+        - Vendor-R
+        - Vendor-Q
+        - Vendor-P
+        - Vendor-O
+        - Vendor-N
+      VENDOR_NAME:
+        description: 'Vendor Name'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - xiaomi
+        - samsung
+        - realme
+        - oppo
+        - lenovo
+        - motorola
+        - asus
+      DEVICE_NAME:
+        description: 'Device Name'
+        required: true
+        default: 'codename'
+      USER_TOKEN:
+        description: 'It will serve as your Password'
+        required: true
+        default: 'ghp_xxxxxxxxxxxxxxxxxxxxxxx'
+      TARGET_REPO:
+        description: 'Pre-made Repo' # Remember, create repo first, with nothing on it. Also, don't put https:// at first, and no .git at the end.
+        required: true
+        default: 'github.com/<repo-owner>/<repo-name>'
+
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display Run Parameters
+      run: |
+        echo "::group::User Environment Variables"
+        echo "DUMP_REPO: ${{ github.event.inputs.DUMP_REPO }}"
+        echo "DEVICE_TREE: ${{ github.event.inputs.DEVICE_TREE }}"
+        echo "VENDOR_BRANCH: ${{ github.event.inputs.VENDOR_BRANCH }}"
+        echo "VENDOR_NAME: ${{ github.event.inputs.VENDOR_NAME }}"
+        echo "DEVICE_NAME: ${{ github.event.inputs.DEVICE_NAME }}"
+        echo "USER_TOKEN: ${{ github.event.inputs.USER_TOKEN }}"
+        echo "TARGET_REPO: ${{ github.event.inputs.TARGET_REPO }}"
+        echo "::endgroup::"
+ 
+    - name: Check Out
+      uses: actions/checkout@v3.1.0
+      
+    - name: Clone Android Dump Repository
+      run: |
+        mkdir workspace
+        cd workspace
+        echo "workspace=$(pwd)" >> $GITHUB_OUTPUT
+        git clone ${{ github.event.inputs.DUMP_REPO }} temp
+        echo "Done cloning."
+      id: pwd
+
+    - name: Clone Android Device Tree
+      run: |
+        git clone ${{ github.event.inputs.DEVICE_TREE }} android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}
+      working-directory: workspace
+      
+    - name: Clone LineageOS Tools and Utils
+      run: |
+        git clone https://github.com/LineageOS/android_tools_extract-utils -b lineage-19.1 android/tools/extract-utils
+        echo "Done cloning extract-utils."
+        git clone https://github.com/LineageOS/android_prebuilts_extract-tools -b lineage-19.1 android/prebuilts/extract-tools
+        echo "Done cloning extract-tools."
+      working-directory: ${{ steps.pwd.outputs.workspace }}
+
+    - name: Extracting Files from Dump
+      run: |
+        chmod a+x android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/setup-makefiles.sh
+        cd android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
+        bash extract-files.sh ~/work/Get-Extract-Push/Get-Extract-Push/workspace/temp/
+        echo "Done extracting and making files."
+        echo "Pushing as repository now."
+      working-directory: ${{ steps.pwd.outputs.workspace }}
+
+    - name: Compressing Vendor Blobs
+      run: |
+        sudo add-apt-repository universe
+        sudo apt update
+        sudo apt install p7zip-full p7zip-rar
+        cd workspace
+        7z a Vendor-Blobs-${{ github.event.inputs.DEVICE_NAME }}.7z ${GITHUB_WORKSPACE}/workspace/android/vendor/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
+    
+    - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: workspace/Vendor-Blobs-${{ github.event.inputs.DEVICE_NAME }}.7z
+        name: Vendor Blobs for ${{ github.event.inputs.DEVICE_NAME }}
+        tag_name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
+        body: |
+          About: Compressed Stock Vendor Blobs, extract and use.
+          Device: ${{ github.event.inputs.DEVICE_NAME }
+      
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
