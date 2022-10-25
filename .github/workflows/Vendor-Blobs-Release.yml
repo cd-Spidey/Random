@@ -92,7 +92,7 @@ jobs:
         cd android/device/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
         bash extract-files.sh ${GITHUB_WORKSPACE}/workspace/temp/
         echo "Done extracting and making files."
-        echo "Pushing as repository now."
+        echo "Compressing Vendor Blobs."
       working-directory: ${{ steps.pwd.outputs.workspace }}
 
     - name: Compressing Vendor Blobs
@@ -102,7 +102,8 @@ jobs:
         sudo apt install p7zip-full p7zip-rar
         cd workspace
         7z a Vendor-Blobs-${{ github.event.inputs.DEVICE_NAME }}.7z ${GITHUB_WORKSPACE}/workspace/android/vendor/${{ github.event.inputs.VENDOR_NAME }}/${{ github.event.inputs.DEVICE_NAME }}/
-    
+        echo "Uploading as Github Release..."
+        
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
