@@ -110,8 +110,8 @@ jobs:
         name: Vendor Blobs for ${{ github.event.inputs.DEVICE_NAME }}
         tag_name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         body: |
-          About: Compressed Stock Vendor Blobs, extract and use.
-          Device: ${{ github.event.inputs.DEVICE_NAME }
+          Device: ${{ github.event.inputs.DEVICE_NAME }}
+          About: Vendor Blobs
       
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
