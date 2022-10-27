@@ -1,0 +1,13 @@
+name: Command Testing
+
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Repo
+      run: |
+        mkdir -p ~/.bin
+        PATH="${HOME}/.bin:${PATH}"
+        curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
+        chmod a+rx ~/.bin/repo
