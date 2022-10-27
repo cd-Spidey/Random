@@ -1,5 +1,13 @@
 name: Command Testing
 
+on:
+  workflow_dispatch:
+    inputs:
+      MANIFEST_URL:
+        description: 'MANIFEST_URL (if want to use SSH keys, use git@github.com:XXXXX)'
+        required: true
+        default: 'https://github.com/PitchBlackRecoveryProject/manifest_pb.git'
+        
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
