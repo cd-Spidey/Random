@@ -19,3 +19,18 @@ jobs:
         PATH="${HOME}/.bin:${PATH}"
         curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
         chmod a+rx ~/.bin/repo
+        
+    - name: Initialize repo
+      run: |
+        mkdir workspace
+        cd workspace
+        echo "workdir=$(pwd)" >> $GITHUB_OUTPUT
+        git config --global user.name "Carlo Dandan"
+        git config --global user.email "jasminecarlo01@gmail.com"
+        repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
+      id: pwd
+        
+    - name: Repo Sync
+      run: |
+        repo sync -j$(nproc --all) --force-sync
+      working-directory: workspace
