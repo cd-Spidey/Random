@@ -15,7 +15,9 @@ jobs:
     steps:
     - name: Repo
       run: |
-        sudo apt-get install repo
+        sudo apt update
+        sudo apt -y upgrade
+        sudo apt -y install repo
         
     - name: Initialize repo
       run: |
