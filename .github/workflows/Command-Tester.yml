@@ -15,7 +15,8 @@ jobs:
     steps:
     - name: Repo
       run: |
-        sudo apt -y install phablet-tools
+        sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
+        sudo chmod a+rx /usr/local/bin/repo
         
     - name: Initialize repo
       run: |
