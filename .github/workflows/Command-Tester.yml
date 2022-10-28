@@ -19,6 +19,7 @@ jobs:
         curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
+        cp /home/runner/work/Random/Random/workspace/.repo/repo/repo /usr/bin/repo
         
     - name: Initialize repo
       run: |
