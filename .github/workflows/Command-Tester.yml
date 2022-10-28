@@ -15,9 +15,7 @@ jobs:
     steps:
     - name: Repo
       run: |
-        sudo apt update
-        sudo apt -y upgrade
-        sudo apt -y install repo
+        sudo apt -y install phablet-tools
         
     - name: Initialize repo
       run: |
