@@ -39,5 +39,7 @@ sudo chown root /etc/udev/rules.d/51-android.rules
 sudo systemctl restart udev
 
 echo -e "Installing Git-Repo"
-sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
-sudo chmod a+rx /usr/local/bin/repo
+mkdir ~/bin
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+sudo ln -sf ~/bin/repo /usr/bin/repo
