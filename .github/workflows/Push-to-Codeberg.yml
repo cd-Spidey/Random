@@ -1,0 +1,125 @@
+name: Android Dump
+
+on:
+  workflow_dispatch:
+    inputs:
+      FIRMWARE_URL:
+        description: 'Android URL'
+        required: true
+        default: 'https://mirrors.lolinet.com/firmware/motorola/rhode/official/RETLA/XT2221-2_RHODE_RETLA_12_S1SR32.38-87-2_subsidy-DEFAULT_regulatory-DEFAULT_cid50_CFC.xml.zip'
+      DUMP_BRANCH:
+        description: 'Dump Branch'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - Android-S
+        - Android-R
+        - Android-Q
+        - Android-P
+        - Android-O
+        - Android-N
+      VENDOR_NAME:
+        description: 'Vendor Name'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - xiaomi
+        - samsung
+        - realme
+        - oppo
+        - lenovo
+        - motorola
+        - asus
+      FIRMWARE_NAME:
+        description: 'Firmware Name'
+        required: true
+        default: 'miui_SPESNGlobal_V13.0.2.0.SGKMIXM_586a606056_12.0'
+      USER_TOKEN:
+        description: 'It will serve as your Password'
+        required: true
+        default: 'eb8963bef436a7b2b9eac0f49f93427fd7271edc'
+      TARGET_REPO:
+        description: 'Pre-made Repo'
+        required: true
+        default: 'codeberg.org/Firmware-Dump/android_dump_'
+
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Display Run Parameters
+      run: |
+        echo "::group::User Environment Variables"
+        echo "FIRMWARE_URL: ${{ github.event.inputs.FIRMWARE_URL }}"
+        echo "DUMP_BRANCH: ${{ github.event.inputs.DUMP_BRANCH }}"
+        echo "VENDOR_NAME: ${{ github.event.inputs.VENDOR_NAME }}"
+        echo "FIRMWARE_NAME: ${{ github.event.inputs.FIRMWARE_NAME }}"
+        echo "USER_TOKEN: ${{ github.event.inputs.USER_TOKEN }}"
+        echo "TARGET_REPO: ${{ github.event.inputs.TARGET_REPO }}"
+        echo "::endgroup::"
+ 
+    - name: Check Out
+      uses: actions/checkout@v3.1.0
+
+    - name: Cleanup
+      uses: rokibhasansagar/slimhub_actions@main
+
+    - name: Set Swap Space
+      uses: pierotofy/set-swap-space@master
+      with:
+        swap-size-gb: 12
+
+    - name: Prepare the environment
+      run: |
+        sudo apt update
+        sudo apt -y upgrade
+        sudo apt -y install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract rename liblzma-dev python3 brotli lz4
+        pip3 install backports.lzma protobuf pycrypto twrpdtgen extract-dtb
+
+    - name: Clone DumprX
+      run: |
+        mkdir workspace
+        cd workspace
+        echo "::set-output name=pwd::$(pwd)"
+        git clone https://github.com/carlodeeCrypton/DumprX.git
+        echo "Done cloning."
+      id: pwd
+          
+    - name: Setup DumprX
+      run: |
+        cd DumprX
+        bash setup.sh
+      working-directory: workspace
+      
+    - name: Add New Folder
+      run: |
+        mkdir firmware
+        cd firmware
+      working-directory: ${{ steps.pwd.outputs.pwd }}
+      
+    - name: Run Dumpyara
+      run: |
+        cd DumprX
+        bash dumper.sh ${{ github.event.inputs.FIRMWARE_URL }}
+      working-directory: ${{ steps.pwd.outputs.pwd }}
+
+    - name: Pushing to as Repository
+      run: |
+        cd DumprX/out
+        rm -rf .git
+        git init
+        git config http.postBuffer 524288000
+        git config --global user.name "Carlo Dee"
+        git config --global user.email "carlodee.official@gmail.com"
+        git branch -M ${{ github.event.inputs.DUMP_BRANCH }}
+        git add .
+        git commit -m "Initial commit: Import from ${{ github.event.inputs.VENDOR_NAME }} ${{ github.event.inputs.FIRMWARE_NAME }}."
+        git remote add origin https://${{ github.event.inputs.USER_TOKEN }}@${{ github.event.inputs.TARGET_REPO }}.git
+        git push origin ${{ github.event.inputs.DUMP_BRANCH }}
+        echo "Done pushing as a repository. You now have Full Android Dump."
+      working-directory: ${{ steps.pwd.outputs.pwd }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
