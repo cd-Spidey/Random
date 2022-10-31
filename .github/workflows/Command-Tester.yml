@@ -20,17 +20,17 @@ jobs:
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
         
-    - name: Initialize repo
+    - name: Set-up Manifest
       run: |
-        mkdir workspace
-        cd workspace
-        echo "workdir=$(pwd)" >> $GITHUB_OUTPUT
+        mkdir ~/orangefoxtemp
+        cd ~/orangefoxtemp
+        git clone https://gitlab.com/OrangeFox/sync.git
+        cd sync
+        ./orangefox_sync.sh --branch ${{ github.event.inputs.MANIFEST_BRANCH }} --path ~/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
+        
+    - name: Clone Device Tree
+      run: |
+        cd ~/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         git config --global user.name "Carlo Dandan"
         git config --global user.email "jasminecarlo01@gmail.com"
-        repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }}
-      id: pwd
-        
-    - name: Repo Sync
-      run: |
-        repo sync -j$(nproc --all) --force-sync
-      working-directory: workspace
+        git clone ${{ github.event.inputs.DEVICE_TREE }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
