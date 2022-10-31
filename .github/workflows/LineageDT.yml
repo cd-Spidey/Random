@@ -98,11 +98,11 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: workspace/LineageOS-DT-${{ github.event.inputs.DEVICE_NAME }}.7z
-        name: Vendor Blobs for ${{ github.event.inputs.DEVICE_NAME }}
+        name: LineageOS Device Tree for ${{ github.event.inputs.DEVICE_NAME }}
         tag_name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         body: |
           Device: ${{ github.event.inputs.DEVICE_NAME }}
-          About: Vendor Blobs
+          About: LineageOS Device Tree
       
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
