@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Repo
       run: |
-        git clone https://android.googlesource.com/tools/repo --branch v2.29 --single-branch ~/bin
+        git clone https://android.googlesource.com/tools/repo -b v2.29 ~/bin
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
         
