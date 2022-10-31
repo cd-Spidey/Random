@@ -90,7 +90,7 @@ jobs:
         sudo add-apt-repository universe
         sudo apt update
         sudo apt install p7zip-full p7zip-rar
-        7z a LineageOS-DT-${{ github.event.inputs.DEVICE_NAME }}.7z ${GITHUB_WORKSPACE}/workspace/aospdtgen/lineagedt/
+        7z a LineageOS-DT-${{ github.event.inputs.DEVICE_NAME }}.7z ${GITHUB_WORKSPACE}/workspace/lineagedt/
         echo "Uploading as Github Release..."
       working-directory: ${{ steps.pwd.outputs.workspace }}
         
