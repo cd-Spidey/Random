@@ -28,6 +28,8 @@ jobs:
         git config --global user.name "Carlo Dandan"
         git config --global user.email "jasminecarlo01@gmail.com"
         repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }}
+        cp /home/runner/work/Custom-Recovery-Builder/Custom-Recovery-Builder/workspace/.repo/repo/repo /usr/bin/repo
+        repo init --depth=1 -u ${{ github.event.inputs.MANIFEST_URL }}
       id: pwd
         
     - name: Repo Sync
