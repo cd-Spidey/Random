@@ -39,7 +39,7 @@ sudo chown root /etc/udev/rules.d/51-android.rules
 sudo systemctl restart udev
 
 echo "Installing Git-Repo"
-mkdir ~/bin
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+git config --global advice.detachedHead false
+git clone https://android.googlesource.com/tools/repo -b v2.29 ~/bin
 chmod a+x ~/bin/repo
 sudo ln -sf ~/bin/repo /usr/bin/repo
