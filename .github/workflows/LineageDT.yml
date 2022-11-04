@@ -9,15 +9,15 @@ on:
       DUMP_REPO:
         description: 'Android Dump' # Look for Android Dump in Github, or in Gitlab. Or dump your own.
         required: true
-        default: 'https://dumps.tadiphone.dev/dumps/redmi/xig02/'
+        default: 'https://dumps.tadiphone.dev/dumps/redmi/viva'
       DEVICE_TREE:
         description: 'Device Tree' # Your Current Device Tree, you can generate using aospdtgen from sebaubuntu if you don't have one.
         required: true
-        default: 'https://github.com/cd-Spidey/custom_recovery_tree_xiaomi_cannong'
+        default: 'https://github.com/edenefrii77/recovery-viva'
       VENDOR_BRANCH:
         description: 'Desired Vendor Branch'
         required: true
-        default: ''
+        default: 'R'
         type: choice
         options:
         - Vendor-S
@@ -29,7 +29,7 @@ on:
       VENDOR_NAME:
         description: 'Vendor Name'
         required: true
-        default: ''
+        default: 'xiaomi'
         type: choice
         options:
         - xiaomi
@@ -42,7 +42,7 @@ on:
       DEVICE_NAME:
         description: 'Device Name'
         required: true
-        default: 'codename'
+        default: 'viva'
 
 jobs:
   build:
