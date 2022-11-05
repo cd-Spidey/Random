@@ -41,7 +41,7 @@ jobs:
     - name: Zip Files
       run: |
         cd randomfiles/twrp_abtemplate
-        zip -rv test-flashable-recovery.zip magiskboot META-INF/
+        zip -rv test-flashable-recovery.zip magiskboot recovery.img META-INF/
         ls
 
     - name: Upload to Release
