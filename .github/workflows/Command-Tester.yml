@@ -40,8 +40,8 @@ jobs:
 
     - name: Zip Files
       run: |
-        cd randomfiles
-        zip -rv test-flashable-recovery.zip twrp_abtemplate
+        cd randomfiles/twrp_abtemplate
+        zip -rv test-flashable-recovery.zip magiskboot META-INF/
         ls
 
     - name: Upload to Release
