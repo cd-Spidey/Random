@@ -20,17 +20,11 @@ jobs:
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
         
-    - name: Set-up Manifest
-      run: |
-        mkdir ~/orangefoxtemp
-        cd ~/orangefoxtemp
-        git clone https://gitlab.com/OrangeFox/sync.git
-        cd sync
-        ./orangefox_sync.sh --branch ${{ github.event.inputs.MANIFEST_BRANCH }} --path ~/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
-        
-    - name: Clone Device Tree
-      run: |
-        cd ~/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
-        git config --global user.name "Carlo Dandan"
-        git config --global user.email "jasminecarlo01@gmail.com"
-        git clone ${{ github.event.inputs.DEVICE_TREE }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+- name: Check Build Tree
+      uses: haya14busa/action-cond@dependabot/npm_and_yarn/actions/core-1.9.1
+      id: buildtree
+      with:
+        cond: ${{ github.event.inputs.MANIFEST_BRANCH == 'https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-11' || github.event.inputs.MANIFEST_BRANCH == 'https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-12.1' }}
+        if_true: twrp
+        if_false: omni
+
