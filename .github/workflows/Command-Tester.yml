@@ -16,9 +16,7 @@ jobs:
 
     - name: Prepare the Environment
       run: |
-        sudo apt update
-        sudo apt -y upgrade
-        sudo apt -y install zip wget curl
+        sudo apt -y install git zip wget curl
 
     - name: Repo
       run: |
@@ -35,7 +33,7 @@ jobs:
         cd ..
         git clone https://github.com/cd-Spidey/Random.git
         cd workspace
-        cp recover.img ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
+        cp recovery.img ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
         cd ..
         zip -r test-flashable-recovery.zip ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
 
