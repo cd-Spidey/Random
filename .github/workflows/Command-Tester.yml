@@ -41,6 +41,7 @@ jobs:
     - name: Zip Files
       run: |
         zip -rv test-flashable-recovery.zip ${GITHUB_WORKSPACE}/randomfiles/twrp_abtemplate
+        ls
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
