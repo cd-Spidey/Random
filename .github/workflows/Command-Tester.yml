@@ -13,6 +13,13 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-20.04
     steps:
+
+    - name: Prepare the Environment
+      run: |
+        sudo apt update
+        sudo apt -y upgrade
+        sudo apt -y install zip wget curl
+
     - name: Repo
       run: |
         git config --global advice.detachedHead false
@@ -20,11 +27,26 @@ jobs:
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
         
-    - name: Check Build Tree
-      uses: haya14busa/action-cond@dependabot/npm_and_yarn/actions/core-1.9.1
-      id: buildtree
-      with:
-        cond: ${{ github.event.inputs.MANIFEST_BRANCH == 'https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-11' || github.event.inputs.MANIFEST_BRANCH == 'https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-12.1' }}
-        if_true: twrp
-        if_false: omni
+    - name: Download
+      run: |
+        mkdir workspace
+        cd workspace
+        wget https://codeberg.org/carlodeeCrypton/Personal-File-Dumping-Repo/raw/branch/main/Ulefone/Power6/recovery.img
+        cd ..
+        git clone https://github.com/cd-Spidey/Random.git
+        cd workspace
+        cp recover.img ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
+        cd ..
+        zip -r test-flashable-recovery.zip ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
 
+    - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: Random/twrp_abtemplate/test-flashable-recovery.zip
+        name: For Testing Purposes - Stock Recovery Only
+        tag_name: test-${{ github.run_id }}
+        body: |
+           - Hey
+           - Test
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
