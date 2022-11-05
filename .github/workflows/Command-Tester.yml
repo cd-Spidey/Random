@@ -31,16 +31,21 @@ jobs:
         cd workspace
         wget https://codeberg.org/carlodeeCrypton/Personal-File-Dumping-Repo/raw/branch/main/Ulefone/Power6/recovery.img
         cd ..
-        git clone https://github.com/cd-Spidey/Random.git
+        git clone https://github.com/cd-Spidey/Random.git ./randomfiles
+
+    - name: Copy Files
+      run: |
         cd workspace
-        cp recovery.img ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
-        cd ..
-        zip -r test-flashable-recovery.zip ${GITHUB_WORKSPACE}/Random/twrp_abtemplate
+        cp recovery.img ${GITHUB_WORKSPACE}/randomfiles/twrp_abtemplate
+
+    - name: Zip Files
+      run: |
+        zip -r test-flashable-recovery.zip ${GITHUB_WORKSPACE}/randomfiles/twrp_abtemplate
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
-        files: Random/twrp_abtemplate/test-flashable-recovery.zip
+        files: randomfiles/twrp_abtemplate/test-flashable-recovery.zip
         name: For Testing Purposes - Stock Recovery Only
         tag_name: test-${{ github.run_id }}
         body: |
