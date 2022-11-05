@@ -40,13 +40,14 @@ jobs:
 
     - name: Zip Files
       run: |
-        zip -rv test-flashable-recovery.zip ${GITHUB_WORKSPACE}/randomfiles/twrp_abtemplate
+        cd randomfiles
+        zip -rv test-flashable-recovery.zip twrp_abtemplate
         ls
 
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
-        files: test-flashable-recovery.zip
+        files: randomfiles/test-flashable-recovery.zip
         name: For Testing Purposes - Stock Recovery Only
         tag_name: test-${{ github.run_id }}
         body: |
