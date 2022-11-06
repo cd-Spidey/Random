@@ -1,57 +1,53 @@
 name: Command Testing
-
+# Push your desired Vendor Blobs in to your Pre-made Repository.
+# Don't ever put your Github's Personal Access Token here as default value.
+# If you are pushing in Github, be mindful in blobs size, 100MB maximum size per file.
+# Other Repository Website don't have that limit, way bigger at least.
 on:
   workflow_dispatch:
     inputs:
-      MANIFEST_URL:
-        description: 'MANIFEST_URL (if want to use SSH keys, use git@github.com:XXXXX)'
+      DUMP_REPO:
+        description: 'Android Dump' # Look for Android Dump in Github, or in Gitlab. Or dump your own.
         required: true
-        default: 'https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b android-12.1'
-        
+        default: 'https://codeberg.org/Firmware-Dump/android_dump_realme_9se'
+
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-
-    - name: Prepare the Environment
-      run: |
-        sudo apt -y install git zip wget curl
-
-    - name: Repo
-      run: |
-        git config --global advice.detachedHead false
-        git clone https://android.googlesource.com/tools/repo -b v2.29 ~/bin
-        chmod a+x ~/bin/repo
-        sudo ln -sf ~/bin/repo /usr/bin/repo
-        
-    - name: Download
+ 
+    - name: Check Out
+      uses: actions/checkout@v3.1.0
+      
+    - name: Clone Android Dump Repository
       run: |
         mkdir workspace
         cd workspace
-        wget https://codeberg.org/carlodeeCrypton/Personal-File-Dumping-Repo/raw/branch/main/Ulefone/Power6/recovery.img
-        cd ..
-        git clone https://github.com/cd-Spidey/Random.git ./randomfiles
+        echo "workspace=$(pwd)" >> $GITHUB_OUTPUT
+        git clone ${{ github.event.inputs.DUMP_REPO }} temp
+        echo "Done cloning."
+      id: pwd
 
-    - name: Copy Files
+    - name: Compressing Modules
       run: |
-        cd workspace
-        cp recovery.img ${GITHUB_WORKSPACE}/randomfiles/twrp_abtemplate
-
-    - name: Zip Files
-      run: |
-        cd randomfiles/twrp_abtemplate
-        zip -rv test-flashable-recovery.zip magiskboot recovery.img META-INF/
-        ls
-
+        sudo add-apt-repository universe
+        sudo apt update
+        sudo apt install p7zip-full p7zip-rar
+        cd temp
+        7z a Vendor-Modules-9SE.7z ${GITHUB_WORKSPACE}/workspace/temp/vendor_boot/ramdisk/lib/modules
+        echo "Uploading as Github Release..."
+      working-directory: workspace
+        
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
-        files: randomfiles/twrp_abtemplate/test-flashable-recovery.zip
-        name: For Testing Purposes - Stock Recovery Only
-        tag_name: test-${{ github.run_id }}
+        files: workspace/Vendor-Modules-9SE.7z
+        name: Vendor Modules
+        tag_name: ${{ github.run_id }}
         body: |
-           - Hey
-           - Test
+          Device: Realme 9SE
+          About: Vendor Modules
+      
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
