@@ -39,10 +39,11 @@ jobs:
       working-directory: workspace
         
     - name: Upload to Release
-      uses: softprops/action-gh-release@v1
+      uses: xresloader/upload-to-github-release@v1.3.7
       with:
-        files: workspace/Vendor-Modules-9SE.7z
+        file: workspace/Vendor-Modules-9SE.7z
         name: Vendor Modules
+        prerelease: true
         tag_name: ${{ github.run_id }}
         body: |
           Device: Realme 9SE
