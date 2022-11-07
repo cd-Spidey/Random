@@ -42,12 +42,10 @@ jobs:
       uses: xresloader/upload-to-github-release@v1.3.7
       with:
         file: workspace/Vendor-Modules-9SE.7z
-        name: Vendor Modules
+        release_name: Vendor Modules
+        draft: false
         prerelease: true
         tag_name: ${{ github.run_id }}
-        body: |
-          Device: Realme 9SE
-          About: Vendor Modules
       
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
