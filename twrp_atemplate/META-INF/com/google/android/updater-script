@@ -1,0 +1,12 @@
+ui_print("**********************************************");
+ui_print("**********************************************");
+ui_print("*   Team Win Recovery Project v3.7.0_12.1    *");
+ui_print("*                for Cannong                 *");
+ui_print("*            by cd-Spidey/Crypton            *");
+ui_print("**********************************************");
+ui_print("**********************************************");
+ui_print("*>>>>>>>>>>>>>FLASHING ZIP FILE>>>>>>>>>>>>>>*");
+package_extract_file("recovery.img", "/dev/block/by-name/recovery");
+ui_print("*               DONE FLASHING                *");
+ui_print("*      REBOOT NOW TO YOUR NEW RECOVERY       *");
+ui_print("**********************************************");

@@ -1,0 +1,663 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: system/app/BackupRestoreConfirmation.apk
+SHA1-Digest: d6u2C1IRQnkmcwJNHbUOm7SBDT8=
+
+Name: system/framework/com.samsung.device.jar
+SHA1-Digest: sJBfKO8Cq833WR8t5vCn7MErKtY=
+
+Name: system/app/Music2.apk
+SHA1-Digest: Vyl4rkUzc3g2c4R02SistCxEZEo=
+
+Name: system/app/BluetoothAvrcp.apk
+SHA1-Digest: xjxAqfD+ec+xIazoVA1cmR5UJ/I=
+
+Name: preload/symlink/system/app/MtpApplication.apk
+SHA1-Digest: YTblvS8jbiUWU/3i135PMcxtPBM=
+
+Name: system/framework/org.simalliance.openmobileapi.jar
+SHA1-Digest: tOpMm3YQBOwkZOx/nLbI870iKac=
+
+Name: preload/symlink/system/app/AutomationTest_JBUP.apk
+SHA1-Digest: nMwYHy6x1rpOHQYAgaHYqG4SSIw=
+
+Name: system/app/CertInstaller.apk
+SHA1-Digest: 5NhyU5qhYbvw0VlPpmR26stO7gI=
+
+Name: preload/symlink/system/app/VideoPlayer.apk
+SHA1-Digest: U414h2f4AsgSYA2D/7P/hBZlxmY=
+
+Name: system/app/DefaultContainerService.apk
+SHA1-Digest: M+lWDSEUn+YXUZrEO32LF7mx2bA=
+
+Name: system/app/MusicFX.apk
+SHA1-Digest: R7m7HVKX8OiECgUP0DpAN3OUAVo=
+
+Name: system/app/EdmVpnServices.apk
+SHA1-Digest: VOkvTMNgsH7N2wpMqZnE5qTYEng=
+
+Name: system/app/PopupuiReceiver.apk
+SHA1-Digest: kzTbNC6yNhi8o9eUWyPvP4iFAWE=
+
+Name: preload/symlink/system/app/AccuweatherWidget_Main.apk
+SHA1-Digest: 3xA7bDQoRtXzxEdVqhDW+Uz1MLs=
+
+Name: system/app/SecMiniDiary_WVGA.apk
+SHA1-Digest: xO0+qKNW86W8+vNjOnH/PP9H8F8=
+
+Name: system/app/FmmDM.apk
+SHA1-Digest: 3VtaputZ9mramueFUcaxdOSuvfM=
+
+Name: system/app/DrmProvider.apk
+SHA1-Digest: Ew4jtOkgDKHd8l3R4EhvRdO7caQ=
+
+Name: system/app/sCloudSyncContacts.apk
+SHA1-Digest: I/wODQecw68YAHjtHbVKRCt0JqU=
+
+Name: system/app/SecFileShareClient.apk
+SHA1-Digest: 2Z1GEMj5L9dEc5g0W6ciEOzSZVo=
+
+Name: system/framework/minimode.jar
+SHA1-Digest: tV4TbLW7fUOFVAjYiuSePIilMU0=
+
+Name: system/framework/sec_feature.jar
+SHA1-Digest: zwjrTHh3KXoSZtQpt2eNcV3hw9k=
+
+Name: system/app/SecFactoryPhoneTest.apk
+SHA1-Digest: I6XAsbv/g5ryD9jOtuMY3ppEXsA=
+
+Name: system/app/CSC.apk
+SHA1-Digest: 7PStQzfWuQ4GPXwi+o9RLWCcFzY=
+
+Name: system/app/SecLiveWallpapersPicker.apk
+SHA1-Digest: htNzQTgMICIkEX4BemR5bZIFLD8=
+
+Name: preload/symlink/system/app/SecBluetooth.apk
+SHA1-Digest: LlZ6irHPV99PO9zmsPURfyljrKU=
+
+Name: system/app/SerialNumberLabelIndicator_JBUP.apk
+SHA1-Digest: ekbrpWKXuEUQ4IjtKcK1ORCE8uY=
+
+Name: system/app/TwDVFSApp.apk
+SHA1-Digest: GuA6H6AWzQafDooeDMUFBReBht8=
+
+Name: system/framework/ext.jar
+SHA1-Digest: l+CFH06qT7T7IHVP0WvwQfqcqSE=
+
+Name: preload/symlink/system/app/PlusOne.apk
+SHA1-Digest: c/spFO0yGRM5Z2EK9VgDydH5JAE=
+
+Name: system/framework/com.android.location.provider.jar
+SHA1-Digest: 2PnzO66TbNEBOo+su8VDtrboNqg=
+
+Name: preload/symlink/system/app/SecBrowser.apk
+SHA1-Digest: JDkZ2ldI4RlKaYFunIr7LFMOmkA=
+
+Name: preload/symlink/system/app/ChocoEUKor.apk
+SHA1-Digest: XkS1zHtu+YSgSDzVI9KxAtTUSv8=
+
+Name: system/framework/services.jar
+SHA1-Digest: cWPt6fj09kcciXOkPqKjVPUdw9U=
+
+Name: preload/symlink/system/app/GmsCore.apk
+SHA1-Digest: gNxT85Go2JwO0oDolv3ERZw2I7A=
+
+Name: preload/symlink/system/app/Talk.apk
+SHA1-Digest: hMI242ScmshaIlaGyahpvHc/N8M=
+
+Name: system/app/SystemUI.apk
+SHA1-Digest: 0pE0K0HXDbWuMec3Q6i3TmQ/UmA=
+
+Name: system/framework/framework-res.apk
+SHA1-Digest: SRExc1Xt6RS6St3g+OByFkOrX+o=
+
+Name: system/app/SecContacts.apk
+SHA1-Digest: ITzhaWDVUplDYwi3HJl1TY8Rk3Y=
+
+Name: system/app/ContextProvider.apk
+SHA1-Digest: ozglSk3r8UxhdFgq93Idby5onGo=
+
+Name: system/app/BadgeProvider.apk
+SHA1-Digest: 17x+pHAUoudY0FvmMJWypQ0b8aY=
+
+Name: system/framework/requestsync.jar
+SHA1-Digest: 9Wya3XrFPTJtmmyXITTieX8Nepk=
+
+Name: system/framework/javax.obex.jar
+SHA1-Digest: q68+RhrF+wgJawesqy7jd6oIhk8=
+
+Name: preload/symlink/system/app/RoseEUKor.apk
+SHA1-Digest: KiFaKpUnp58GTW8NwEj4LjE03sY=
+
+Name: system/app/SecFileShareServer.apk
+SHA1-Digest: h1mlxLPHWPFl1CNxLHA55GLdppM=
+
+Name: system/app/SecTelephonyProvider.apk
+SHA1-Digest: he+kqpM8mZ6qGOiicREfhi4d6+w=
+
+Name: system/app/TextMemoWidget_SmartPhone.apk
+SHA1-Digest: xbfocKticjAl0iNJl10kgZn5E1c=
+
+Name: system/app/DSMForwarding.apk
+SHA1-Digest: 7qcbErTRkq4dcQgWHoIyGq4WGHQ=
+
+Name: system/app/SecGallery2.apk
+SHA1-Digest: cNm8kEtClNzVACuLoiOw+ZGsuEw=
+
+Name: system/framework/content.jar
+SHA1-Digest: k63+CdEMeDgFDH/p8E+0oV+eh+0=
+
+Name: preload/symlink/system/app/PolarisViewer.apk
+SHA1-Digest: fWz9JebM0FTFQYRwd+8jnuuguXw=
+
+Name: system/framework/com.google.android.media.effects.jar
+SHA1-Digest: da8Na8JP7/6VYG0b7yB72CpQ4iE=
+
+Name: system/app/Divx.apk
+SHA1-Digest: mxTtuNaWE/Ft0/OS6+XybjPb8jg=
+
+Name: preload/symlink/system/app/PanningTryActually.apk
+SHA1-Digest: 31OxFjkadcXRftVzyuCiaaSNwik=
+
+Name: preload/symlink/system/app/Phonesky.apk
+SHA1-Digest: mXPj3eBTATFSERlUI2pX0v99qPs=
+
+Name: preload/symlink/system/app/DigitalClock.apk
+SHA1-Digest: bpGYwiA9X/c1dL378IQ9s4XxZHc=
+
+Name: system/framework/twframework-res.apk
+SHA1-Digest: yWmQ6xzGknLurnZkshjOb4mbTH0=
+
+Name: preload/symlink/system/app/SecWallpaperChooser.apk
+SHA1-Digest: JsSZg3tRU/XJuxoOYXhR9qml/wQ=
+
+Name: system/app/sCloudDataSync.apk
+SHA1-Digest: m7iPfZXKaAg4ZN/7t1R00E/OmIE=
+
+Name: system/framework/framework.jar
+SHA1-Digest: NZxxZ21M97fF/xeUePn4ZkIm448=
+
+Name: system/app/sCloudSyncCalendar.apk
+SHA1-Digest: mxyIDE2XhxpDfiY/6lIKqSjYA38=
+
+Name: system/app/SamsungTTS.apk
+SHA1-Digest: JdX1WuIBLhyJ2Sa8EiWyKK6irc8=
+
+Name: preload/symlink/system/app/AccuweatherWidget.apk
+SHA1-Digest: dotahMte05UQHDsrxrEin+eB8Jw=
+
+Name: preload/symlink/system/app/talkback.apk
+SHA1-Digest: 1nvJooLnmd6IfD4+XcDIU7o+/LU=
+
+Name: system/app/serviceModeApp_JANICE_EUR_OPEN.apk
+SHA1-Digest: Gu1JMu+JJFjNvPo9LKymY193jvs=
+
+Name: preload/symlink/system/app/GoogleFeedback.apk
+SHA1-Digest: x5DKH8nWW1W5iNbkT5mCGshNdcY=
+
+Name: preload/symlink/system/app/Swype.apk
+SHA1-Digest: 7zF8DP9zC8+uHvCC/vIIjpSc2nw=
+
+Name: system/app/FmmDS.apk
+SHA1-Digest: Gqi0dt6yqaXTWLHR5388+CCpHrY=
+
+Name: system/app/GooglePartnerSetup.apk
+SHA1-Digest: NjZyoiXKhglsmQQBYqoyPcoilkY=
+
+Name: system/app/SecPhone.apk
+SHA1-Digest: CICEFOQNLl532t6kGDG5Pmc5Tjs=
+
+Name: system/framework/core-junit.jar
+SHA1-Digest: gbUR1P1q+UVM0ucLoa7+oFZa11s=
+
+Name: system/app/OmaDrmPopup.apk
+SHA1-Digest: 2bdp0wcjbOq+yUgO5tWVwsDQRco=
+
+Name: preload/symlink/system/app/DSMLawmo.apk
+SHA1-Digest: M3Xw5Clqi0zCNbrAfNa4FwujJi4=
+
+Name: system/app/SamsungCamera.apk
+SHA1-Digest: nB12RSGt5Vi3XDmwkALMnJ677Yo=
+
+Name: preload/symlink/system/app/SecDownloadProviderUi.apk
+SHA1-Digest: XiIieP6J6/i6+MtTxhJtNFWTIdU=
+
+Name: system/app/voice_talk_U1.apk
+SHA1-Digest: 10ratrnp3kbw/vNZ2Rh9zNicH2M=
+
+Name: system/app/sCloudDataRelay.apk
+SHA1-Digest: XMBPeG6HHZnYHNsjPPG+p6PbHN0=
+
+Name: preload/symlink/system/app/SecNoteMyFiles.apk
+SHA1-Digest: 6eGPj3loAo6La/7QuXO0glYcUrU=
+
+Name: system/framework/framework2.jar
+SHA1-Digest: DmrtqGhoj6I0gm9u2boSxjt1/0g=
+
+Name: system/app/GoogleSearchWidget.apk
+SHA1-Digest: 4NzD5Gk+setlEXSqyqmIH6jbLuI=
+
+Name: system/app/InputDevices.apk
+SHA1-Digest: niuuQfYH87FnjUlbjiJS6vfGtQ0=
+
+Name: system/app/WlanTest.apk
+SHA1-Digest: 7MRTdI0zuwByrqL1p7cxN1K/bps=
+
+Name: system/app/EdmSysScopeService.apk
+SHA1-Digest: DaW8dmxmzhecNfkXybJBbVHm9tU=
+
+Name: system/framework/sec_platform_library.jar
+SHA1-Digest: GPzKyqcp6UjVC/FueltBUxoaQng=
+
+Name: system/app/PRUI.apk
+SHA1-Digest: jyC6z8J8zKTo0KJT0383UsK8vVw=
+
+Name: system/app/PackageInstaller.apk
+SHA1-Digest: J5EZeJNEUW7VNN+diLfXgazSAps=
+
+Name: system/framework/bmgr.jar
+SHA1-Digest: 6qHEmTu/yMPuPgXD08VvTFi62Wo=
+
+Name: preload/symlink/system/app/HelvNeueLT.apk
+SHA1-Digest: A9aVBD1SlsMni3HTSA45A8zh4d4=
+
+Name: system/app/SamsungWidget_ProgramMonitor.apk
+SHA1-Digest: FqjLgzVPxC4FBdTBIgTyqXTfjb4=
+
+Name: system/app/FotaClient.apk
+SHA1-Digest: IR+zzhe6XSP8xeEccKBKE/y7j64=
+
+Name: preload/symlink/system/app/FactoryTest_JANICE_EUR_OPEN.apk
+SHA1-Digest: PUeR1AMsSy41IAKLLSbF0ZmroTY=
+
+Name: system/app/Preconfig.apk
+SHA1-Digest: osZSQ09ytfUIq1lVipKL9o0WRGM=
+
+Name: preload/symlink/system/app/lcdtest_JANICE_EUR_OPEN.apk
+SHA1-Digest: JB/SdBxc8wYZ7rAg5lUIhLpwBMU=
+
+Name: preload/symlink/system/app/MediaUploader.apk
+SHA1-Digest: xA7EGHCUq49va+QSGr5KeHvlOqs=
+
+Name: system/app/SyncmlDS.apk
+SHA1-Digest: lursxXKkzO9q3/JOC3xjArAKhc8=
+
+Name: system/framework/access.control.jar
+SHA1-Digest: evXYg4wR/Nsh70+C0ZKa+Tm4lj4=
+
+Name: system/app/SecContactsProvider.apk
+SHA1-Digest: 0TKLMtlBaI2lLFoLB0yuyLlicrM=
+
+Name: system/app/AllshareMediaServer.apk
+SHA1-Digest: Fa5mL+U2aG/oZSVlY9WLOVd3ThE=
+
+Name: system/framework/sechardware.jar
+SHA1-Digest: FKGPeDhjdKYdDBl5SpeT69UFTuI=
+
+Name: system/app/VoiceSearchStub.apk
+SHA1-Digest: ZsflAd+6MgpryXx5/gAMmEaVvUs=
+
+Name: system/framework/pm.jar
+SHA1-Digest: ClP5/Ktg5WhEqUHe7CGrngozlgM=
+
+Name: preload/symlink/system/app/DualClockAnalog.apk
+SHA1-Digest: /A72b6dxCUiShsY1Q6PPYf0B7tk=
+
+Name: system/app/Kies.apk
+SHA1-Digest: HCZn1AWKTFxc+xJdVet1y5MeFgk=
+
+Name: preload/symlink/system/app/AnalogClockUnique.apk
+SHA1-Digest: XiePHwxI8XtrsmvzgY65W8eogXE=
+
+Name: system/app/SPPPushClient_Prod.apk
+SHA1-Digest: bn5isR5NaJFFggZztvFy9m+TH4M=
+
+Name: preload/symlink/system/app/ClockPackage.apk
+SHA1-Digest: aFNiWD72EI3SOghzanO5l8+klfk=
+
+Name: preload/symlink/system/app/GoogleLoginService.apk
+SHA1-Digest: ML+iKHH/zprGaqKIsUb4+qiEZrI=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: JVcnex/88XQhsvOpqhGh+c/ssuU=
+
+Name: system/app/PhoneErrService.apk
+SHA1-Digest: /5OXjQ+xBe4dhiGDR4RFWTw6Lqs=
+
+Name: system/framework/com.google.widevine.software.drm.jar
+SHA1-Digest: Q+wmLp5oC5yoFzEEWbZ2wEd61tw=
+
+Name: preload/symlink/system/app/SecCalendar.apk
+SHA1-Digest: 02RrTlJETBuL9TJ/GUypWXfCJgQ=
+
+Name: system/framework/com.android.future.usb.accessory.jar
+SHA1-Digest: miVm5z5AhZ2lTnGGb4rGrS97zdI=
+
+Name: preload/symlink/system/app/SecExchange.apk
+SHA1-Digest: CV+umm4ufOCXBQJX+lfntewaNM8=
+
+Name: system/framework/bouncycastle.jar
+SHA1-Digest: Xjkroo/tTaXcCusMIwhpqC157vs=
+
+Name: system/framework/secmediarecorder.jar
+SHA1-Digest: vVqtAk90Fy2WxvtW5g/c2+gZVoI=
+
+Name: system/app/PreloadInstaller.apk
+SHA1-Digest: HkB7TyVFWajbYOzmST/7Pdi+D+4=
+
+Name: system/app/GoogleContactsSyncAdapter.apk
+SHA1-Digest: VaZ9DsChIHYilOI+Y2va3jUtx/I=
+
+Name: preload/symlink/system/app/SNS.apk
+SHA1-Digest: jY68jw9oeCvQccCqvPs7WZ0+S2w=
+
+Name: system/app/SNoteProvider.apk
+SHA1-Digest: Fu4Th/UvXk9W+h72Z2hozslrx44=
+
+Name: system/framework/allsharelib.jar
+SHA1-Digest: ljA0RnBUtw7yd9Ryl5z3KEFccPw=
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: bVTwx6rW1n3jA9EHQKRgQubENNw=
+
+Name: preload/symlink/system/app/kieswifi.apk
+SHA1-Digest: vPAaggXNZNBh6egUyJ1sgwXhMek=
+
+Name: preload/symlink/system/app/SamsungApps.apk
+SHA1-Digest: jbLUnXaELE6nH7Iq+En0k8uEGVI=
+
+Name: preload/symlink/system/app/FmRadio.apk
+SHA1-Digest: czNV3HbwmYRLo7Y7KWGcz8OsUoQ=
+
+Name: system/app/sCloudSyncBrowser.apk
+SHA1-Digest: KBxfcMgNq8dbGlyVG2qxfJ8EHPQ=
+
+Name: system/app/InputEventApp_JANICE_EUR_OPEN.apk
+SHA1-Digest: UBwkF69bYQOW0yrfDWpzF+T/7ZM=
+
+Name: preload/symlink/system/app/MobilePrint.apk
+SHA1-Digest: fDF36IPtD2BqEkBkNxx1wJndmjM=
+
+Name: system/framework/twframework.jar
+SHA1-Digest: ZftabVT0HpAETI4FjeDeE7l2BN4=
+
+Name: system/app/BluetoothMap.apk
+SHA1-Digest: LE0+BOYn2Ylfg9PHgrhFaVBDCdM=
+
+Name: system/app/EnterprisePermissions.apk
+SHA1-Digest: XQxoMPyZYU6luweuMvf1C5lX5mc=
+
+Name: preload/symlink/system/app/VoiceRecorder.apk
+SHA1-Digest: bMy0xXab34LciGsv32duYmZhvhI=
+
+Name: preload/symlink/system/app/SecCalculator2.apk
+SHA1-Digest: BLFeJC6s3/GXOj8MX5ad0I5CPJI=
+
+Name: preload/symlink/system/app/SecEmail.apk
+SHA1-Digest: CFEZtmpHKXkl9BXSfAVgNXdBS+c=
+
+Name: system/framework/bu.jar
+SHA1-Digest: eiFV4LfeblYIk2naBUAb5sKwACU=
+
+Name: system/app/Stk.apk
+SHA1-Digest: Af/f6CwXLKqUjGHZO8DisI5OOZY=
+
+Name: system/app/SecOmaDownloadProvider.apk
+SHA1-Digest: lTF5o/0N4QRJqgiJaYboHVUCovE=
+
+Name: system/framework/input.jar
+SHA1-Digest: wRFUMxxshHX2RDl2m5yesZ59nRM=
+
+Name: system/app/FactoryClient_JANICE_EUR_OPEN.apk
+SHA1-Digest: TgT+3UW7aw0XmwTxYq1vEEbBLHY=
+
+Name: system/app/SecSettings.apk
+SHA1-Digest: fpscezXmW1FGDtpbvSnrLnm3Xww=
+
+Name: system/framework/android.test.runner.jar
+SHA1-Digest: MRr9LPHDNXleRgShiZK9AYGb0KQ=
+
+Name: preload/symlink/system/app/DualClockDigital.apk
+SHA1-Digest: UZ6W++90kg+DFEbyg8IxOPQ8qso=
+
+Name: system/framework/apache-xml.jar
+SHA1-Digest: PoklXY22dITi2LTVxQMQPzCUep8=
+
+Name: preload/symlink/system/app/sCloudBackupApp.apk
+SHA1-Digest: DsCJrdBNos+rC9W3OBO49QS77mM=
+
+Name: preload/symlink/system/app/Gmail.apk
+SHA1-Digest: cdsMMx4BN/+6yBFX2vL19FXw2yM=
+
+Name: system/app/LogsProvider.apk
+SHA1-Digest: Fn6Qqn0efnxM0eWoqHH4ANF0KW0=
+
+Name: preload/symlink/system/app/Samsungservice.apk
+SHA1-Digest: lvYiw6hMm7eskh9f9gm1qUeoRUQ=
+
+Name: preload/symlink/system/app/NetworkLocation.apk
+SHA1-Digest: CgNREFfBBIgR2y3kszhOH3YVveA=
+
+Name: system/framework/allshare.jar
+SHA1-Digest: ju4RH7V8C7u/jXhqboYbk8jJS1o=
+
+Name: preload/symlink/system/app/YahoostockWidget.apk
+SHA1-Digest: leIlzczVt5CGxZd+LmoukX8WMCI=
+
+Name: system/framework/uiautomator.jar
+SHA1-Digest: 1wZRuPTDL80vEiHUFbjFGPn+zkk=
+
+Name: system/framework/libvtmanagerjar.jar
+SHA1-Digest: MnrlmOkRLJWNOwI6MZ5dr8Jra0c=
+
+Name: preload/symlink/system/app/CoolEUKor.apk
+SHA1-Digest: pY+fxfem+QPG2hsdCZ6m5APfJx0=
+
+Name: preload/symlink/system/app/SamsungIME.apk
+SHA1-Digest: ZWjI+sj+xFVJalwYmYAtYdlB75o=
+
+Name: system/app/AnalogClockSimple.apk
+SHA1-Digest: 6IjMYrtSOOikM4GPwoSnjo4e+jQ=
+
+Name: system/app/TasksProvider.apk
+SHA1-Digest: wFh9dZ285OOedECs+Z0qvGEcGxo=
+
+Name: system/app/SecDownloadProvider.apk
+SHA1-Digest: bBYr4GWztWmGSlmnRFy7QZxshbA=
+
+Name: META-INF/com/android/metadata
+SHA1-Digest: zjUe7H/r+YZw6eCm3mjnm0w2cZ8=
+
+Name: system/app/SecurityProvider.apk
+SHA1-Digest: w2J4D5abC3fNL+68v5eaCS1gx18=
+
+Name: preload/symlink/system/app/TMemo.apk
+SHA1-Digest: G5+6f3U9kWuoCxIiQ1meNwCneSE=
+
+Name: system/framework/CustFeature.jar
+SHA1-Digest: wsh7RbqQejiMYgtn5LcVBTLZJSg=
+
+Name: preload/symlink/system/app/Street.apk
+SHA1-Digest: gy7wRgDM+/QJWcqujoRdJcZFtgM=
+
+Name: system/app/SecSettingsProvider.apk
+SHA1-Digest: f80E0oyteUody98y6rKugAtIllQ=
+
+Name: system/framework/sec_edm.jar
+SHA1-Digest: Mc6SfOttkRqWR92L96Ta7QRufs4=
+
+Name: system/app/SecLauncher2.apk
+SHA1-Digest: 0C+PXUZIVB6z6DZoQR8HfzWU0kA=
+
+Name: preload/symlink/system/app/JobManager.apk
+SHA1-Digest: 4FYpIRX4iCG9sdoPePmIE2S9HbM=
+
+Name: system/framework/seccamera.jar
+SHA1-Digest: I1A69/wLIImQZIsM4lPkNbzxv4k=
+
+Name: system/framework/kies_feature.jar
+SHA1-Digest: QgCdPOb/oite+NYCcTK55AjHf6A=
+
+Name: system/app/SecCalendarProvider.apk
+SHA1-Digest: ExECkjEmkB/XyhxlcK5928mlUBM=
+
+Name: system/app/SecMms.apk
+SHA1-Digest: z6nZsTs607+1KCZLuLsA6BHsXY4=
+
+Name: system/app/SmartcardService.apk
+SHA1-Digest: 3/jkI8Lm0bW8lkJrdfWnID5zEVw=
+
+Name: system/app/SysScope.apk
+SHA1-Digest: tleYvZ329EvzmZuafNCz3BCgkJ0=
+
+Name: preload/symlink/system/app/GoogleCalendarSyncAdapter.apk
+SHA1-Digest: muoGnAHurBcOptWwFGk9x/fT064=
+
+Name: preload/symlink/system/app/YahoonewsWidget.apk
+SHA1-Digest: FIaWkSbkjU045ejedJzNDBodY8Y=
+
+Name: system/app/SecSetupWizard.apk
+SHA1-Digest: nchu0lN6clT+1MV8gUojg/LEP5g=
+
+Name: preload/symlink/system/app/ChromeBookmarksSyncAdapter.apk
+SHA1-Digest: YCuOGnlgqQnp7FT89CETqdyHAEA=
+
+Name: system/app/Phone_Util_JANICE_EUR_OPEN.apk
+SHA1-Digest: w0DF7qBnnG3kUzXGb0dZ0GM21x4=
+
+Name: system/framework/GlobalConfig.jar
+SHA1-Digest: MXlwC1XeT1NN9LJMnNtOF64/+Ng=
+
+Name: system/app/minimode-res.apk
+SHA1-Digest: 76MNG/UfbRmL/BCd8azj5Hm1wbs=
+
+Name: system/app/SetupWizard.apk
+SHA1-Digest: 0NcunkahxmldiJjnAEGg6PV4oIg=
+
+Name: system/app/Microbes.apk
+SHA1-Digest: vqFiJWOdX4dS9MbEpnNR+GQFJ4U=
+
+Name: system/app/ClipboardSaveService.apk
+SHA1-Digest: GATuGajndIarxuhdgEwXZQidv3o=
+
+Name: system/app/GoogleBackupTransport.apk
+SHA1-Digest: nYA0HGetyLXXu0cCUcFt2zKdDVA=
+
+Name: system/app/VpnDialogs.apk
+SHA1-Digest: jQo66AzqqsbO/0J9NkrQD3ookK8=
+
+Name: system/app/MobileTrackerEngineTwo.apk
+SHA1-Digest: lOvdQlJbl6k8Mxb/IolcrTrEjcE=
+
+Name: preload/symlink/system/app/PickUpTutorial.apk
+SHA1-Digest: SfsPSYlDFtN0MI2zlMaFbttGBdA=
+
+Name: system/app/Magazines.apk
+SHA1-Digest: tdeEKHF7eZgGRZH/6bqLv4eLcUo=
+
+Name: system/app/YouTube.apk
+SHA1-Digest: at/VXB/enxx1W5t578xXXrO+y+0=
+
+Name: preload/symlink/system/app/SyncmlDM.apk
+SHA1-Digest: Cza/3LKOxDmgEo8NvJ7R7NWszWk=
+
+Name: preload/symlink/system/app/SamsungAppsUNA3.apk
+SHA1-Digest: rEkcksL5i2NMlHWryXFldC/UHcA=
+
+Name: system/app/AllshareService.apk
+SHA1-Digest: KH0OTF/uqmq+I1p5SpA7K9cJ7WI=
+
+Name: preload/symlink/system/app/GoogleTTS.apk
+SHA1-Digest: p35B/ZzZJktTXogAe5R/tYxFa4I=
+
+Name: preload/symlink/system/app/MusicPlayer.apk
+SHA1-Digest: Mu9BK7WV8HWZdFfoRieOFpEQkZI=
+
+Name: system/app/BCService.apk
+SHA1-Digest: gQpJvTmtD274zsn0+KNCsdJaK4c=
+
+Name: preload/symlink/system/app/Velvet.apk
+SHA1-Digest: cLhJLixyeZk+FRqkBT8/794c0+Y=
+
+Name: system/app/SelfTestMode_JANICE_EUR_OPEN.apk
+SHA1-Digest: w+oH95Js6JKJntKc21N+4hWq/Gw=
+
+Name: system/app/SystemInfo_JANICE_EUR_OPEN.apk
+SHA1-Digest: 69noLBOvkvMvmiU50O9tgcWhi4Q=
+
+Name: system/app/BluetoothTest.apk
+SHA1-Digest: B05bhFp4Bg/89noUQ+aGVMyDB4M=
+
+Name: system/app/wssyncmlnps.apk
+SHA1-Digest: wnHPrlbnoTfKdqqZSQjat+30RL4=
+
+Name: system/app/PCWClientS.apk
+SHA1-Digest: fIzaEufBjajIFcm6i/Dz9hQjDlQ=
+
+Name: preload/symlink/system/app/GMS_Maps.apk
+SHA1-Digest: 2tlNpREvypX1j8Rebo9i5zVNNg8=
+
+Name: system/framework/com.google.android.maps.jar
+SHA1-Digest: menv2JU3c554NshVkmfVlBZCrto=
+
+Name: system/framework/am.jar
+SHA1-Digest: H3rnQFPbyK9Lak5NVjRlaQG7Dls=
+
+Name: system/framework/core.jar
+SHA1-Digest: i2hck1lOPUv9vmtAwrxNzFJvlak=
+
+Name: system/app/SecMediaProvider.apk
+SHA1-Digest: UVg3WrgRD1cBX5YVew/9lEvcLq0=
+
+Name: system/framework/ime.jar
+SHA1-Digest: 4/Cjl1/+DWf+LT8tDhDFMennN+I=
+
+Name: system/app/KeyChain.apk
+SHA1-Digest: TEtfzGY6njLxAIamx4Cv4UVQYu8=
+
+Name: system/framework/monkey.jar
+SHA1-Digest: 2DH1mStxA4XX83j3sR8NtgtzWBM=
+
+Name: system/app/UserDictionaryProvider.apk
+SHA1-Digest: ripm1yWV3G9Vv/6vtJdDvVFSD9w=
+
+Name: system/app/shutdown_JBUP.apk
+SHA1-Digest: BC/SqP5luneCWrfr3AQ8K3jiUBs=
+
+Name: system/app/SecHTMLViewer.apk
+SHA1-Digest: l3jlMBl5CeEJyZ8XmS3SuIE2zsg=
+
+Name: system/app/SharedStorageBackup.apk
+SHA1-Digest: nlB5rw24vV6zUePLWp+4DSmcnWo=
+
+Name: system/framework/android.policy.jar
+SHA1-Digest: IYQgMu0qaYeM5xATtk6JBzlN4V4=
+
+Name: system/app/ApplicationsProvider.apk
+SHA1-Digest: RCuVa3wKP0XuKLh5doHFYmByEes=
+
+Name: system/app/ChatON_MARKET.apk
+SHA1-Digest: OkpOhchDf1WDB4OjlPvnTWOLLyk=
+
+Name: system/app/GoogleServicesFramework.apk
+SHA1-Digest: KObZ1ur2LeGsP/Wzh0NHpUs/bmc=
+
+Name: system/app/CapabilityManagerService.apk
+SHA1-Digest: k0HjqAPhpuIzOr/4/rSK3sy7GYs=
+
+Name: system/app/sCloudBackupProvider.apk
+SHA1-Digest: JNp/i7uF/cjrItVc+tRb9PQOdAQ=
+
+Name: preload/symlink/system/app/Keystring_factory_JBUP.apk
+SHA1-Digest: TXonkv0qPSRvGSzH+yynngqAKwY=
+
+Name: system/app/OmaCP.apk
+SHA1-Digest: D3446M7S1GmMVuMMFdexLxlUYzI=
+
+Name: system/framework/svc.jar
+SHA1-Digest: DG/go4K7+u2vgnkj5ThUG5OfGCA=
+
+Name: system/app/UltraCfg.apk
+SHA1-Digest: eHjscgmXZrJsl/cPexcgyc1y/1w=
+
