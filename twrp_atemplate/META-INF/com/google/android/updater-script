@@ -10,4 +10,4 @@ package_extract_file("recovery.img", "/dev/block/by-name/recovery");
 ui_print("*               DONE FLASHING                *");
 ui_print("*      REBOOT NOW TO YOUR NEW RECOVERY       *");
 ui_print("**********************************************");
-reboot recovery
+reboot recovery;
